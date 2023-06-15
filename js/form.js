@@ -13,8 +13,8 @@ export default class Form {
       const name = this.inputNameElement.value;
       const email = this.inputEmailElement.value;
       const data = { sum, name, email };
-      callback(data);
-      this.inputSumElement.value = "";
+      callback(data, sum);
+      // this.inputSumElement.value = "";
     });
   }
 }

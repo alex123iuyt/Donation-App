@@ -5,16 +5,16 @@ export default class Modal {
     this.formElement = this.modalElement.querySelector("#userInfoForm");
     this.inputNameElement = this.formElement.querySelector("#inputName");
     this.inputEmailElement = this.formElement.querySelector("#inputEmail");
-    this.onSubmitCallback = null;
-    this.inputSumElement = this.formElement.querySelector("#inputSum");
   }
 
   onSubmit(callback) {
     this.formElement.addEventListener("submit", (event) => {
       event.preventDefault();
+      const sum = document.getElementById("inputSum").value;
+      // console.log("Value of inputSum:", sum);
       const name = this.inputNameElement.value;
       const email = this.inputEmailElement.value;
-      const data = { name, email };
+      const data = { sum, name, email };
       callback(data);
     });
   }

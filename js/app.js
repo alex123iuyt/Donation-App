@@ -15,9 +15,9 @@ export default class App {
     this.modal.onClose(this.handleModalClose.bind(this));
   }
 
-  handleFormSubmit(data) {
+  handleFormSubmit(data, sum) {
     this.modal.open();
-    this.modal.updateData(data);
+    this.modal.updateData(data, sum);
   }
 
   handleModalFormSubmit(data) {
