@@ -1,9 +1,9 @@
 export default class Form {
   constructor() {
     this.formElement = document.getElementById("donationForm");
-    this.inputSumElement = document.getElementById("inputSum");
     this.inputNameElement = document.getElementById("inputName");
     this.inputEmailElement = document.getElementById("inputEmail");
+    this.inputSumElement = document.getElementById("inputSum");
   }
 
   onSubmit(callback) {
@@ -14,6 +14,7 @@ export default class Form {
       const email = this.inputEmailElement.value;
       const data = { sum, name, email };
       callback(data);
+      this.inputSumElement.value = "";
     });
   }
 }

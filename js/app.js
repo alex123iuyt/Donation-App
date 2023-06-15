@@ -11,14 +11,19 @@ export default class App {
 
   init() {
     this.form.onSubmit(this.handleFormSubmit.bind(this));
+    this.modal.onSubmit(this.handleModalFormSubmit.bind(this));
     this.modal.onClose(this.handleModalClose.bind(this));
   }
 
   handleFormSubmit(data) {
-    this.table.addRow(data);
     this.modal.open();
+    this.modal.updateData(data);
   }
 
+  handleModalFormSubmit(data) {
+    this.table.addRow(data);
+    this.modal.close();
+  }
   handleModalClose() {
     this.modal.close();
   }
